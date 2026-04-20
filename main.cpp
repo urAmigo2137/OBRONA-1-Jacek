@@ -20,14 +20,13 @@ int main()
     std::cout << "h1 przed usunieciem:" << std::endl;
     h1.wypisz();
 
-    int n = 2;   // tutaj zmieniasz indeks
+    int n = 3;
 
-    if (h1.usunCzas(n))
-    {
-        std::cout << std::endl;
-        std::cout << "h1 po usunieciu elementu o indeksie " << n << ":" << std::endl;
-        h1.wypisz();
-    }
+    h1.usunCzas(n);
+
+    std::cout << std::endl;
+    std::cout << "h1 po usunieciu elementu o indeksie " << n << ":" << std::endl;
+    h1.wypisz();
 
     return 0;
 }
