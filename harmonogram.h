@@ -23,8 +23,7 @@ public:
     void wypisz();
 
     Harmonogram kopiujDoZakresu(Czas& zakres);
-
-    bool usunCzas(int n);   // NOWA METODA
+    void usunCzas(int n);
 };
 
 #endif
