@@ -135,26 +135,23 @@ Harmonogram Harmonogram::kopiujDoZakresu(Czas& zakres)
     return nowyHarmonogram;
 }
 
-bool Harmonogram::usunCzas(int n)
+void Harmonogram::usunCzas(int n)
 {
-    // zabezpieczenie przed niepoprawnym N
     if (n < 0 || n >= liczbaCzasow)
     {
         std::cout << "Blad: niepoprawny indeks N." << std::endl;
-        return false;
+        return;
     }
 
-    // gdy po usunieciu nie zostanie nic
     if (liczbaCzasow == 1)
     {
         delete[] czasy;
         czasy = nullptr;
         liczbaCzasow = 0;
         pojemnosc = 0;
-        return true;
+        return;
     }
 
-    // nowa tablica mniejsza o 1
     Czas* noweCzasy = new Czas[liczbaCzasow - 1];
 
     int j = 0;
@@ -171,6 +168,4 @@ bool Harmonogram::usunCzas(int n)
     czasy = noweCzasy;
     liczbaCzasow = liczbaCzasow - 1;
     pojemnosc = liczbaCzasow;
-
-    return true;
 }
